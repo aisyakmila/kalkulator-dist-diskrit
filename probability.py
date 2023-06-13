@@ -2,13 +2,9 @@ import streamlit as st
 import numpy as np
 from scipy import stats
 
-with st.sidebar:
-    selected = option_menu(
-        menu_title="Distribusi Diskrit:",
-        options=["Home", "Binomial", "Hipergeometrik", "Geometrik", "Binomial Negatif", "Poisson"]
-    )
+test = st.sidebar.selectbox("Distribusi Diskrit", ['Menu', 'Binomial', 'Hipergeometrik', 'Geometrik', 'Binomial Negatif','Poisson'])
 
-if selected == "Home":
+if (test == "Home"):
     st.title("Menghitung Probabilitas Distribusi Diskrit")
     st.markdown("---")
     st.markdown("""
@@ -27,7 +23,7 @@ if selected == "Home":
 
         """)
 
-if selected == "Binomial":
+if (test == "Binomial"):
     st.title("Distribusi Binomial")
 
     n = st.number_input("Banyaknya Percobaan (n)", value=1, min_value=1, step=1)
@@ -43,7 +39,7 @@ if selected == "Binomial":
         st.write("Cumulative Distribution Function (CDF):", cdf)
 
 
-if selected == "Hipergeometrik":
+if (test == "Hipergeometrik"):
     st.title("Distribusi Hipergeometrik")
 
     N = st.number_input("Jumlah Populasi (N)", value=100, min_value=1, step=1)
@@ -59,7 +55,7 @@ if selected == "Hipergeometrik":
         st.write("Probability Mass Function (PMF):", pmf)
         st.write("Cumulative Distribution Function (CDF):", cdf)
 
-if selected == "Geometrik":
+if (test == "Geometrik"):
     st.title("Distribusi Geometrik")
 
     p = st.number_input("Probabilitas Sukses (p)", value=0.5, min_value=0.0, max_value=1.0, step=0.01)
@@ -73,7 +69,7 @@ if selected == "Geometrik":
         st.write("Probability Mass Function (PMF):", pmf)
         st.write("Cumulative Distribution Function (CDF):", cdf)
 
-if selected == "Binomial Negatif":
+if (test == "Binomial Negatif"):
     st.title("Distribusi Binomial Negatif")
 
     n = st.number_input("Jumlah Sukses yang Muncul (k)", value=1, min_value=1, step=1)
@@ -88,7 +84,7 @@ if selected == "Binomial Negatif":
         st.write("Probability Mass Function (PMF):", pmf)
         st.write("Cumulative Distribution Function (CDF):", cdf)
 
-if selected == "Poisson":
+if (test == "Poisson"):
     st.title("Distribusi Poisson")
 
     mu = st.number_input("Rata-rata kejadian sukses (mu)", value=1.0, min_value=0.0, step=0.01)
