@@ -2,7 +2,7 @@ import streamlit as st
 import numpy as np
 from scipy import stats
 
-test = st.sidebar.selectbox("Distribusi Diskrit", ['Menu', 'Binomial', 'Hipergeometrik', 'Geometrik', 'Binomial Negatif','Poisson'])
+test = st.sidebar.selectbox("Distribusi Diskrit", ['Home', 'Binomial', 'Hipergeometrik', 'Geometrik', 'Binomial Negatif','Poisson'])
 
 if (test == "Home"):
     st.title("Menghitung Probabilitas Distribusi Diskrit")
